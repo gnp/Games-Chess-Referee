@@ -1,0 +1,37 @@
+Games::Chess::Referee
+Version 0.001
+Gregor N. Purdy
+gregor@focusresearch.com
+1999-04-19
+
+Copyright (C) 1999 Gregor N. Purdy
+All rights reserved.
+
+This is the initial conversion from my first chess-related Perl
+program, chess.pl, which provided just enough functionality to
+permit tracking the movements of pieces throughout a game. One
+notable feature is the ability to provide incomplete ply notation,
+allowing the program to figure out, for example, the type of the
+piece being moved, or whether the ply represents a capture (x) or
+occupation (-).
+
+Future efforts will integrate this with Games::Chess, replacing
+the rudimentary board and piece data structures with the better
+designed and implemented versions by Gareth Rees, and turning the
+Referee itself into an object. It would also be nice to integrate
+some of the alternate notation parsing into Games::Chess. Very
+abbreviated notation (such as xb4, c5, dxe7, QxR, etc. would be
+great, with ambiguity detection).
+
+Also, much more work needs to be done to create a fully functional
+referee. Subsequent to that, however, Perl-built chess bots could
+be possible, and the referee could be enhanced to the point that
+it could be used for on-line chess matches.
+
+Interesting future work would be to wrap the GNU chess engine in
+a Perl blanket. This would be most interesting if it was done
+in such a way that we weren't just putting a layer over the
+terminal interface, but rather, turning the core of the C code
+into a Perl-wrapped engine that interfaces with the board via
+the Referee.
+
