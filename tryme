@@ -1,31 +1,13 @@
-BEGIN { $| = 1; print "1..2\n"; }
-END { print "not ok 1\n" unless $loaded; }
-use Games::Chess::Referee;
-$loaded = 1;
-print "ok 1\n";
-
+#!/usr/bin/perl -w
 use strict;
-use UNIVERSAL 'isa';
-$^W = 1;
-my $n = 1;
-my $success;
 
+use Games::Chess::Referee;
 
-sub do_test (&)
-{
-	my ($test) = @_;
-	$n++;
-	$success = 1;
-	&$test;
-	print 'not ' unless $success;
-	print "ok $n\n";
-}
 
 sub fail
 {
 	my ($mesg) = @_;
 	print STDERR $mesg, "\n";
-	$success = 0;
 }
 
 my @moves = (
@@ -71,32 +53,28 @@ my @moves = (
 );
 
 
-#
-# do_test()
-#
+print "1998-12-15 Ondrick vs. Purdy, Chicago\n";
 
-do_test {
-	print "1998-12-15 Ondrick vs. Purdy, Chicago\n";
+foreach my $move (@moves) {
+	my @data = @$move;
 
-	foreach my $move (@moves) {
-		my @data = @$move;
-
-		if      ($data[0] eq 'N') {
-			new_game();
-		} elsif ($data[0] eq 'S') {
-			show_board();
-		} elsif ($data[0] eq 'M') {
-			fail("Move failed."), return 0 unless move($data[1], $data[2]);
-		} else {
-			fail("Unknown command.");
-			return 0;
-		}
+	if      ($data[0] eq 'N') {
+		new_game();
+	} elsif ($data[0] eq 'S') {
+		print "\n";
+		show_board();
+		print "\n";
+	} elsif ($data[0] eq 'M') {
+		fail("Move failed."), exit -1 unless move($data[1], $data[2]);
+	} else {
+		fail("Unknown command.");
+		return 0;
 	}
-
-	print "Checkmate.\n";
-
-	return 1;
 }
+
+print "Checkmate.\n";
+
+exit 0;
 
 
 #

@@ -1,5 +1,9 @@
+gc-0.002.diff
 Referee.pm
+Referee.pod
+COPYRIGHT
 MANIFEST
 Makefile.PL
 README
+tryme
 t/referee.t
