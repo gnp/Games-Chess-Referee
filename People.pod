@@ -57,6 +57,8 @@ Retired from chess after winning the championship, returning in the 1990's for
 a single match against Spassky. The first U.S. born world champion, and the youngest
 grandmaster up to that time.
 
+Born 1943-03-08.
+
 =item Gruenfeld
 
 The man for whom the Gruenfeld Defense and Gruenfeld Gambit are named.
