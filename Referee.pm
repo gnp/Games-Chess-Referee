@@ -22,9 +22,6 @@ use Carp;
 
 my $board;
 
-sub upper { my ($s) = @_; $s =~ tr/a-z/A-Z/; return $s; };
-sub lower { my ($s) = @_; $s =~ tr/A-Z/a-z/; return $s; };
-
 my $occupy  = '-';
 my $capture = 'x';
 
@@ -78,17 +75,17 @@ sub ply ($)
 
 	if ($ply =~ m/^([prnbqkPRNBQK]|)([a-hA-H])([1-8])(x|-|)([a-hA-H])([1-8])(.*)$/) {
 		($piece, $ff, $fr, $act, $tf, $tr, $note) = ($ply =~ m/^([prnbqkPRNBQK]|)([a-hA-H])([1-8])(x|-|)([a-hA-H])([1-8])(.*)$/);
-		$piece = upper($piece);
-		$ff    = upper($ff);
-		$tf    = upper($tf);
+		$piece = uc($piece);
+		$ff    = uc($ff);
+		$tf    = uc($tf);
 	}
 	else {
 		carp "Unsupported notation: `$ply'!";
 		return 0;
 	}
 
-	my $from = lower("$ff$fr");
-	my $to   = lower("$tf$tr");
+	my $from = lc("$ff$fr");
+	my $to   = lc("$tf$tr");
 
 	my @from = algebraic_to_xy($from);
 	my @to   = algebraic_to_xy($to);
@@ -96,8 +93,8 @@ sub ply ($)
 	my $from_piece = $board->at(@from);
 	my $to_piece   = $board->at(@to);
 
-	my $from_kind  = upper($from_piece->code());
-	my $to_kind    = upper($to_piece->code());
+	my $from_kind  = uc($from_piece->code());
+	my $to_kind    = uc($to_piece->code());
 
 	#
 	# Check for attempts to castle:
@@ -293,7 +290,7 @@ sub ply ($)
 
 	if (!defined $notation) {
 		if ($from_kind eq 'P') { $piece = ' '; }
-		$notation = $piece . lower($from) . $act . lower($to) . $note;
+		$notation = $piece . lc($from) . $act . lc($to) . $note;
 		$notation = $notation . (' ' x (8 - length($notation)));
 	}
 

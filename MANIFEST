@@ -1,6 +1,7 @@
 gc-0.002.diff
 Referee.pm
 Referee.pod
+Rules.pod
 COPYRIGHT
 MANIFEST
 Makefile.PL
