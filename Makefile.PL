@@ -13,7 +13,7 @@ WriteMakefile (
   NAME         => 'Games::Chess::Referee',
   VERSION_FROM => 'lib/Games/Chess/Referee.pm',
   PREREQ_PM    => {
-    Games::Chess         => undef,
+    Games::Chess         => 0.003,
   },
   EXE_FILES    => [
     'script/mkbd',

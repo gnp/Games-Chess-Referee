@@ -7,7 +7,7 @@
 # way so that a general mechanism can be used to generate possible plies and
 # to check plies for validity.
 #
-# Copyright (C) 1999 Gregor N. Purdy. All rights reserved.
+# Copyright (C) 1999-2006 Gregor N. Purdy. All rights reserved.
 # This program is free software; you can redistribute it and/or
 # modify it under the same terms as Perl itself.
 #

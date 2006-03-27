@@ -3,7 +3,7 @@
 #
 # A Perl Module for validating chess moves.
 #
-# Copyright (C) 1999 Gregor N. Purdy. All rights reserved.
+# Copyright (C) 1999-2006 Gregor N. Purdy. All rights reserved.
 # This program is free software; you can redistribute it and/or
 # modify it under the same terms as Perl iteself.
 #
@@ -13,7 +13,7 @@ package Games::Chess::Referee;
 use base 'Exporter';
 use strict;
 use vars qw($VERSION @EXPORT @EXPORT_OK %EXPORT_TAGS);
-$VERSION = '0.002';
+$VERSION = '0.003';
 @EXPORT = qw(&ply &move &new_game &show_board);
 @EXPORT_OK = @EXPORT;
 

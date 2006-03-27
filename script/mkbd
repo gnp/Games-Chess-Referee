@@ -14,7 +14,7 @@
 #
 #     GNP: Gregor N. Purdy
 #
-# Copyright (C) 1999 Gregor N. Purdy. All rights reserved.
+# Copyright (C) 1999-2006 Gregor N. Purdy. All rights reserved.
 #
 
 use strict;

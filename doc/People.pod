@@ -176,7 +176,7 @@ Gregor N. Purdy (C<gregor@focusresearch.com>).
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright (C) 1999 Gregor N. Purdy. All rights reserved.
+Copyright (C) 1999-2006 Gregor N. Purdy. All rights reserved.
 
 This program is free software. You may redistribute and/or
 modify it under the same terms as Perl iteself.
