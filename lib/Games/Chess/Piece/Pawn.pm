@@ -5,12 +5,11 @@
 package Games::Chess::Piece::Pawn;
 
 use strict;
-use vars qw(@ISA);
 
 use Games::Chess::Piece::General;
 use Games::Chess qw(:constants);
 
-@ISA = qw(Games::Chess::Piece::General);
+our @ISA = qw(Games::Chess::Piece::General);
 
 
 #
@@ -20,7 +19,7 @@ use Games::Chess qw(:constants);
 sub new ($)
 {
 	my $class = shift;
-	
+
 	die "Must specify color" unless @_;
 
 	my $this  = Games::Chess::Piece::General->new(&PAWN, $_[0]);
