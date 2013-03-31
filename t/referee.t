@@ -5,7 +5,6 @@ $loaded = 1;
 print "ok 1\n";
 
 use strict;
-use UNIVERSAL 'isa';
 $^W = 1;
 my $n = 1;
 my $success;
