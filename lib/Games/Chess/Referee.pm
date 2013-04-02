@@ -12,9 +12,9 @@ package Games::Chess::Referee;
 
 use base 'Exporter';
 use strict;
-use vars qw($VERSION @EXPORT @EXPORT_OK %EXPORT_TAGS);
+our( $VERSION, @EXPORT, @EXPORT_OK, %EXPORT_TAGS );
 $VERSION = '0.003';
-@EXPORT = qw(&ply &move &new_game &show_board);
+@EXPORT = qw(ply move new_game show_board);
 @EXPORT_OK = @EXPORT;
 
 use Games::Chess qw(:constants :functions);
@@ -55,7 +55,7 @@ sub ply ($)
 	my ($ply) = @_;
 	my ($piece, $ff, $fr, $act, $tf, $tr, $note);
 	my $notation = undef;
-	
+
 	#
 	# Translate castling notations:
 	#
@@ -235,7 +235,7 @@ sub ply ($)
 	}
 
 	#
-	# Detect the piece: 
+	# Detect the piece:
 	#
 
 	if (!$piece) { $piece = $from_kind; };

@@ -7,7 +7,7 @@ Games::Chess::Referee - work with chess positions and games, according to the ru
 
 =head1 SYNOPSIS
 
-    use Games::Chess:Referee;
+    use Games::Chess::Referee;
     new_game();
     ply('e2e4');
     ply('e7e5');
@@ -59,4 +59,3 @@ This program is free software; you can redistribute it and/or
 modify it under the same terms as Perl itself.
 
 =cut
-

@@ -9,9 +9,7 @@ package Games::Chess::Piece::General;
 
 use Games::Chess::Piece;
 
-use vars qw(@ISA);
-
-@ISA = qw(Games::Chess::Piece);
+our @ISA = qw(Games::Chess::Piece);
 
 
 #
